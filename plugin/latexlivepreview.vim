@@ -169,11 +169,11 @@ EEOOFF
                 " lcd can be avoided thanks to root_dir in TEXINPUTS
 
     silent call system(b:livepreview_buf_data['run_cmd'])
-    if v:shell_error != 0
-        echo 'Failed to compile'
-        lcd -
-        return
-    endif
+    "if v:shell_error != 0
+    "    echo 'Failed to compile'
+    "    lcd -
+    "    return
+    "endif
 
     " Enable compilation of bibliography:
     let l:bib_files = split(glob(b:livepreview_buf_data['root_dir'] . '/**/*.bib'))     " TODO: fails if unused bibfiles
